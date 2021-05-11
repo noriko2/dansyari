@@ -45,7 +45,6 @@ module Dansyari
             helper_specs: false,
             controller_specs: false,
             routing_specs: false
-      end
     end
   end
 end
