@@ -33,6 +33,9 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # コード修正
   gem 'rubocop-airbnb'
+  # test
+  gem "rspec-rails"
+  gem "factory_bot_rails"
 end
 
 group :development do
