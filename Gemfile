@@ -24,6 +24,9 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'rails-i18n', '~> 6.0.0'
 
+# Sprockets4.0だと、app/assetsディレクトリを削除するとSprockets::Railtie::ManifestNeededErrorが発生する
+gem 'sprockets', '~> 3.7.2'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
