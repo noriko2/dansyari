@@ -14,9 +14,6 @@
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
-  # Factory_botの設定 (テスト中に、FactoryBot.create(:user) ではなく、create(:user) と書けるようになる)
-  config.include FactoryBot::Syntax::Methods
-
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods
