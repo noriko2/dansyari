@@ -7,8 +7,12 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
-import 'bootstrap';
-import '../stylesheets/application';
+import 'bootstrap'
+import '../stylesheets/application.scss'
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
+
+// 指定のディレクトリから静的アセットをインポート
+const images = require.context("../images", true)
+const imagePath = name => images(name, true)
