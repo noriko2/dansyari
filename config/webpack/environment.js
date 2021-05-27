@@ -11,4 +11,3 @@ environment.plugins.append(
     Popper: ['popper.js', 'default']
   })
 )
-

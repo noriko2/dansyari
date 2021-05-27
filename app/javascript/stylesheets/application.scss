@@ -1,1 +1,122 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Kosugi&display=swap');
+
+/* 共通 */
+header {
+  background-color: #0490B8;
+}
+body {
+  background-color: #FAFAFA;
+}
+
+a {
+  text-decoration: none;
+  color: #22262A;
+  display: block;
+}
+a:hover {
+  color: #22262A;
+  background-color: #048FB8;
+  color: #fff;
+}
+
+hr {
+  margin: 0 auto;
+}
+
+
+/* home */
+#rogo-img {
+  width: 250px;
+  height: auto;
+}
+
+.main {
+  text-align: center;
+  background-color: #d0eef3;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.top_visual {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#top_visual_2 {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 50px;
+}
+
+#top_visual_3 {
+  width: 400px;
+  background-color: #fff;
+  margin-top: 50px;
+  margin-bottom: 30px;
+}
+
+#top_visual_3 p {
+  font-family: 'Kosugi', sans-serif;
+  font-size: 1.5em;
+}
+#top_visual_3 p:first-child {
+  padding-top: 50px;
+}
+#top_visual_3 p:last-child {
+  margin: 50px auto;
+}
+
+#top-img {
+  width: 300px;
+  height: auto;
+}
+
+.top-btn {
+  width: 60%;
+  height: 50px;
+  background-color: #048FB8;
+  border-color: #048FB8;
+  font-size: 1.2em;
+  transition: all  0.2s ease;
+}
+
+.top-btn:hover {
+  background-color: #089fb6;
+  border-color: #089fb6;
+}
+
+.question {
+  margin: 0 auto 70px auto;
+  text-align: center;
+}
+
+.question h2 {
+  margin: 50px auto 30px auto;
+}
+
+.items {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.item {
+  background-color:#d0eef3;
+  margin: 10px auto;
+  height: 70px;
+  width: 250px;
+  line-height: 70px;
+  border-radius: 5px;
+  transition: all  0.2s ease;
+}
+
+.item p {
+  font-size: 1.3em;
+}
+
+footer {
+  margin-top: 20px;
+}
+
