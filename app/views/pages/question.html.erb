@@ -1,0 +1,31 @@
+<div class="top-visual">
+  <div class="container top-visual-inner">
+    <div id="question">
+        <p><%= @question_message %></p>
+
+        <div id="question__btn">
+          <!--Yes-->
+          <div class="yes-btn btn-blu">
+            <% if @quetion_number == 0 %>
+              <%= link_to "Yes", question_path( id: @item_number, result_number: 1 ) %>
+            <% elsif @quetion_number == 1 %>
+              <%= link_to "Yes", question_path( id: @item_number, result_number: 2 ) %>
+            <% else %>
+              <%= link_to "Yes", question_path( id: @item_number, result_number: 3 ) %>
+            <% end %>
+          </div>
+  
+          <!--No-->
+          <div class="no-btn btn-blu">
+            <% if @quetion_number == 1 %>
+              <%= link_to "No", question_path( id: @item_number, quetion_number: 2 ) %>
+            <% elsif @quetion_number == 2 %>
+              <%= link_to "No", question_path( id: @item_number, quetion_number: 3 ) %>
+            <% else %>
+              <%= link_to "No", question_path( id: @item_number, quetion_number: 1 ) %>
+            <% end %>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
