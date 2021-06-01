@@ -2,9 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Kosugi&display=swap');
 
 /* 共通 */
-header {
-  background-color: #0490B8;
-}
 body {
   background-color: #FAFAFA;
 }
@@ -14,64 +11,111 @@ a {
   color: #22262A;
   display: block;
 }
+
 a:hover {
   color: #22262A;
   background-color: #048FB8;
   color: #fff;
 }
 
-hr {
-  margin: 0 auto;
+.btn-blu {
+  background-color:#d0eef3;
+  transition: all  0.2s ease;
 }
 
+.btn-blu:hover {
+  background-color: #089fb6;
+}
 
-/* home */
-#rogo-img {
+hr {
+  margin: 0;
+}
+
+.hr-footer {
+  margin-top: 50px;
+}
+
+header {
+  background-color: #0490B8;
+}
+
+header #rogo-img {
   width: 250px;
   height: auto;
 }
 
-.main {
+footer {
+  margin-top: 20px;
+}
+
+@media (max-width: 667px) {
+  header #rogo-img {
+    width: 190px;
+    height: auto;
+  }
+}
+
+/* 共通ブロック */
+.top-visual {
   text-align: center;
-  background-color: #d0eef3;
   padding-top: 30px;
   padding-bottom: 50px;
 }
-.top_visual {
+
+.top-visual-inner {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
-#top_visual_2 {
+
+.top-visual__1 {
   width: 100%;
   max-width: 300px;
   margin: 0 50px;
 }
 
-#top_visual_3 {
+.top-visual__2 {
   width: 400px;
-  background-color: #fff;
   margin-top: 50px;
-  margin-bottom: 30px;
 }
 
-#top_visual_3 p {
-  font-family: 'Kosugi', sans-serif;
-  font-size: 1.5em;
+
+
+@media (max-width: 667px) {
+  .top-visual__2 {
+    width: 98%;
+    padding: 10px;
+  }
 }
-#top_visual_3 p:first-child {
+
+/* home */
+.top-visual-home {
+  background-color: #d0eef3;
+}
+
+.top-visual-home__2 {
+  background-color: #fff;
+}
+
+.top-visual-home__2 p {
+  font-size: 1.5em;
+  font-family: 'Kosugi', sans-serif;
+}
+
+.top-visual-home__2 p:first-child {
   padding-top: 50px;
 }
-#top_visual_3 p:last-child {
+
+.top-visual-home__2 p:last-child {
   margin: 50px auto;
 }
 
-#top-img {
+#top-visual-home__img {
   width: 300px;
   height: auto;
 }
 
-.top-btn {
+.start-btn {
   width: 60%;
   height: 50px;
   background-color: #048FB8;
@@ -80,7 +124,7 @@ hr {
   transition: all  0.2s ease;
 }
 
-.top-btn:hover {
+.start-btn:hover {
   background-color: #089fb6;
   border-color: #089fb6;
 }
@@ -94,7 +138,7 @@ hr {
   margin: 50px auto 30px auto;
 }
 
-.items {
+.question__items {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -102,21 +146,152 @@ hr {
   max-width: 900px;
 }
 
-.item {
-  background-color:#d0eef3;
+.question__item {
   margin: 10px auto;
   height: 70px;
   width: 250px;
   line-height: 70px;
   border-radius: 5px;
-  transition: all  0.2s ease;
 }
 
-.item p {
+.question__item p {
   font-size: 1.3em;
 }
 
-footer {
-  margin-top: 20px;
+@media (max-width: 667px) {
+  #top-visual-home__img {
+    width: 250px;
+    height: auto;
+  }
+  .start-btn {
+    width: 80%;
+  }
+  .top-visual-home h2 {
+    font-size: 1.3em;
+  }
+  .question__item {
+    width: 45%;
+  }
+  .question__item p {
+    font-size: 1.2em;
+  }
+  .question h2 {
+    font-size: 22px;
+  }
 }
+
+/* questionページ */
+#question {
+  margin-top: 70px;
+  width: 700px;
+}
+
+#question p{
+  font-size: 1.5em;
+}
+
+#question__btn {
+  display: flex;
+  margin-top: 70px;
+  justify-content: center;
+}
+
+.yes-btn, .no-btn {
+  height: 70px;
+  width: 200px;
+  line-height: 70px;
+  border-radius: 5px;
+  font-size: 1.3em;
+}
+
+.no-btn {
+  margin-left: 30px;
+}
+
+@media (max-width: 667px) {
+  #question p {
+    font-size: 1.2em;
+    padding: 0 10px;
+  }
+  .yes-btn, .no-btn {
+    width: 130px;
+  }
+  .no-btn {
+    margin-left: 15px;
+  }
+}
+
+/* resultページ */
+.result {
+  align-items: center;
+}
+
+.result-1 {
+  max-width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#robot-img {
+  width: 270px;
+  height: 360px;
+  margin-top: 30px;
+}
+
+#gomi-img {
+  width: 100px;
+  height: auto;
+  margin: auto 0 10px 0;
+}
+
+#robot-heart-img {
+  width: 350px;
+  height: auto;
+  margin: 30px auto auto auto;
+}
+
+.result-2 {
+  width: 400px;
+  background-color:#d0eef3;
+  margin-top: 50px;
+  padding: 50px 10px;
+}
+
+.result-2 h1 {
+  font-family: 'Kosugi', sans-serif;
+  font-size: 2em;
+}
+
+.result-2 p {
+  font-family: 'Kosugi', sans-serif;
+  font-size: 1.3em;
+}
+
+.result-2 p:first-of-type {
+  margin-top: 40px;
+  font-size: 2em;
+}
+
+.result-2 p:last-child {
+  margin-top: 30px;
+}
+
+@media (max-width: 667px) {
+  #robot-img {
+    width: 180px;
+    height: auto;
+  }
+  #gomi-img {
+    width: 50px;
+    height: auto;
+  }
+  .result-2 h1 {
+    font-size: 1.5em;
+  }
+  .result-2 p:last-child {
+    font-size: 1.1em;
+  }
+}
+
 

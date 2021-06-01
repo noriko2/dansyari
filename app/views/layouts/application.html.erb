@@ -11,6 +11,24 @@
   </head>
 
   <body>
+    <header>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-3">
+            <%= link_to image_pack_tag("logo.png", alt:"断捨離できるくん", id:"rogo-img"), root_url %>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <hr>
     <%= yield %>
+    <hr class="hr-footer">
+
+    <footer>
+      <div class="container">
+        <p>&copy; 断捨離できるくん</p>
+      </div>
+    </footer>
   </body>
 </html>
