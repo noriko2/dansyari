@@ -4,6 +4,13 @@
 /* 共通 */
 body {
   background-color: #FAFAFA;
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 a {
@@ -78,8 +85,6 @@ footer {
   width: 400px;
   margin-top: 50px;
 }
-
-
 
 @media (max-width: 667px) {
   .top-visual__2 {
