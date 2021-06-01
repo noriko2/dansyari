@@ -1,0 +1,15 @@
+<div class="top-visual">
+  <div class="container top-visual-inner result">
+    <div class="top-visual__1 result-1">
+      <%= image_pack_tag("robot.png", alt:"断捨離できるくん", id:"robot-img") %>
+      <%= image_pack_tag("gomibako.png", alt:"ゴミ", id:"gomi-img") %>
+    </div>
+    <div class="top-visual__2 result-2">
+      <h1>診断結果</h1>
+      <p>今すぐ手放そう</p>
+      <p><%= @result_message %></p>
+    </div>
+  </div>
+</div>
+
+

@@ -1,6 +1,15 @@
 inherit_from:
   - .rubocop_airbnb.yml
 
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: no_comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: no_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: no_comma
+
 #以下にはrubocopで検証したくないフォルダを指定する
 AllCops:
   Exclude:

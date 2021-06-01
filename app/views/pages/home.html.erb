@@ -1,44 +1,25 @@
-  <header>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-7">
-          <%= image_pack_tag("logo.png", alt:"ロゴ画像", id:"rogo-img") %>
-          <!--<h1>断捨離できるくん</h1>-->
-        </div>
-      </div>
+<div class="top-visual top-visual-home">
+  <div class="container top-visual-inner">
+    <div class="top-visual__1">
+      <%= image_pack_tag("robot.png", alt:"断捨離できるくん", id:"top-visual-home__img") %>
     </div>
-  </header>
+    <div class="top-visual__2 top-visual-home__2">
+      <p>ボクに任せて !</p>
+      <p>質問に答えるだけで<br>カンタンに断捨離できるよ</p>
+      <p class="btn btn-primary start-btn">さっそく始める</p>
+    </div>
+  </div>
+</div>
 
-  <hr>
-  <div class="main">
-    <div class="container top_visual">
-      <div id="top_visual_2">
-        <%= image_pack_tag("robot.png", alt:"トップ画像", id:"top-img") %>
+<hr>
+<div class="container question">
+  <h2>断捨離したいものは？</h2>
+  <div class="question__items">
+    <% @items.each_with_index do |item, i| %> 
+      <div class="question__item btn-blu">
+        <p><%= link_to item, question_path(id: i, quetion_item_number: 0) %></p>
       </div>
-      <div id="top_visual_3">
-        <p>ボクに任せて !</p>
-        <p>質問に答えるだけで<br>カンタンに断捨離できるよ</p>
-        <p class="btn btn-primary top-btn">さっそく始める</p>
-      </div>
-    </div>
+    <% end %>
   </div>
-  
-  <hr>
-  <div class="container question">
-    <h2>断捨離したいものは？</h2>
-      <div class="items">
-        <% @items.each_with_index do |item, i| %> 
-          <div class="item">
-            <p><%= link_to item, "#" %></p>
-          </div>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <hr>
-  
-  <div class="container">
-    <footer>
-      <p>&copy; 断捨離できるくん</p>
-    </footer>
-  </div>
+</div>
+
