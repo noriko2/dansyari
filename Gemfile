@@ -24,6 +24,12 @@ gem 'rails-i18n', '~> 6.0.0'
 
 # ログイン機能
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-line'
+gem 'omniauth-facebook'
+
+# gem "OmniAuth" の脆弱性対策 (OmniAuth::AuthenticityErrorの対策)
+gem 'omniauth-rails_csrf_protection'
 
 # 環境変数
 gem 'dotenv-rails'
