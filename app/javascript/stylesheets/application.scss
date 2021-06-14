@@ -375,12 +375,12 @@ footer {
   margin: 0 auto;
 }
 
-.privacy-link {
-  display: inline;
+.link-blu {
+  display: inline-block;
   color: #0099e8;
 }
 
-.privacy-link:hover {
+.link-blu:hover {
   color: #40b0e7;
   text-decoration: underline;
 }
@@ -407,6 +407,10 @@ footer {
 
 .email-form {
   margin-top: 40px;
+}
+
+.email-form .form-group:first-of-type  {
+  margin: 0;
 }
 
 .form-require {
@@ -467,6 +471,12 @@ footer {
     padding: 32px;
     margin-top: 30px;
   }
+}
+
+/* ログインページ */
+.remember_me {
+  margin-top: 10px;
+  margin-left: 5px;
 }
 
 /* deviseエラー*/

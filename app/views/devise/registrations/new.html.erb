@@ -4,7 +4,7 @@
 
     <div class="registration-form">
       <div class="single-content">
-        <small>登録することで、<%= link_to "利用規約", privacy_path, class: "privacy-link" %>に同意したものとみなされます。</small>
+        <small>登録することで、<%= link_to "利用規約", privacy_path, class: "link-blu" %>に同意したものとみなされます。</small>
         <%= link_to "LINEで登録する", user_line_omniauth_authorize_path, method: :post, class:   "btn-default btn-line" %>
         <%= link_to "Facebookで登録する", user_facebook_omniauth_authorize_path, method: :post, class: "btn-default btn-facebook" %>
       
