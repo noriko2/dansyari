@@ -20,9 +20,20 @@ a {
 }
 
 a:hover {
-  color: #22262A;
-  background-color: #048FB8;
-  color: #fff;
+  color: #414950;
+}
+
+.btn-default {
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+  cursor: pointer;
+  text-align: center;
 }
 
 .btn-blu {
@@ -31,7 +42,11 @@ a:hover {
 }
 
 .btn-blu:hover {
-  background-color: #089fb6;
+  background-color: #048FB8;
+  color: #fff;
+}
+.btn-blu a:hover {
+  color: #fff;
 }
 
 hr {
@@ -44,21 +59,59 @@ hr {
 
 header {
   background-color: #0490B8;
+  height: 52px;
 }
 
 header #rogo-img {
-  width: 250px;
+  width: 165px;
   height: auto;
+}
+
+.header-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-bar {
+  display: flex;
+}
+
+.nav-item {
+  color: #fff;
+  font-size: 14px;
+  line-height: 52px;
+}
+
+.nav-item:hover {
+  color: #fff;
+}
+
+.nav-item:last-child {
+  margin-left: 10px;
+}
+
+.fa-user {
+  color: #fff;
 }
 
 footer {
   margin-top: 20px;
 }
 
-@media (max-width: 667px) {
+@media (min-width: 768px) {
+  header {
+    height: 82px;
+  }
   header #rogo-img {
-    width: 190px;
+    width: 250px;
     height: auto;
+  }
+  .nav-item {
+    font-size: 20px;
+    line-height: 82px;
+  }
+  .nav-item:last-child {
+    margin-left: 20px;
   }
 }
 
@@ -299,4 +352,133 @@ footer {
   }
 }
 
+/* ユーザー登録 */
+.registration-container {
+  background-color: #fff;
+}
 
+.registration-head {
+  text-align: center;
+  margin: 0 auto;
+  padding: 16px;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.registration-form {
+  border-top: 1px solid #d0d0d0;
+  padding: 30px 16px 40px;
+}
+
+.single-content {
+  max-width: 343px;
+  margin: 0 auto;
+}
+
+.privacy-link {
+  display: inline;
+  color: #0099e8;
+}
+
+.privacy-link:hover {
+  color: #40b0e7;
+  text-decoration: underline;
+}
+
+.form-group:first-child {
+  margin: 0;
+}
+
+.form-group {
+  margin: 24px 0 0;
+}
+
+.form-group .input-default {
+  width: 100%;
+  height: 48px;
+  margin: 8px 0 0;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.email-form {
+  margin-top: 40px;
+}
+
+.form-require {
+  background: #ea352d;
+  margin: 0 0 0 8px;
+  padding: 2px 4px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  vertical-align: top;
+}
+
+.link-login {
+  margin-top: 30px;
+}
+
+.link-login:hover {
+  text-decoration: underline;
+}
+
+.btn-line {
+  background-color: #00C300;
+  color: #fff;
+  margin: 16px 0 0;
+}
+
+.btn-line:hover {
+  background-color: #00E000;
+  color: #fff;
+}
+
+.btn-facebook {
+  background-color: #1877F2;
+  color: #fff;
+  margin: 16px 0 0;
+}
+.btn-facebook:hover {
+  background-color: #3788f1;
+  color: #fff;
+}
+
+.btn-gray {
+  background-color: #757575;
+  color: #fff;
+}
+
+.btn-gray:hover {
+  background-color: #929292;
+}
+
+@media screen and (min-width: 768px) {
+  .registration-container {
+    width: 700px;
+    margin: 0 auto;
+  }
+  .registration-head {
+    font-size: 25px;
+    padding: 32px;
+    margin-top: 30px;
+  }
+}
+
+/* deviseエラー*/
+#error_explanation {
+  color: #ea352d;
+  font-size: 14px;
+}
+
+#error_explanation p {
+  margin-bottom: 0;
+}
+
+#error_explanation ul {
+  margin-top: 6px;
+}
