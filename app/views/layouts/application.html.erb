@@ -20,7 +20,7 @@
           </div>
           <div class="nav-bar">
             <% if user_signed_in? %>
-              <%= link_to "#", class: "nav-item" do %>
+              <%= link_to user_path(current_user), class: "nav-item" do %>
                 <i class="fas fa-user"></i>
               <% end %>
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-item" %>

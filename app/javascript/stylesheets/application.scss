@@ -459,6 +459,7 @@ footer {
 
 .btn-gray:hover {
   background-color: #929292;
+  color: #fff;
 }
 
 @media screen and (min-width: 768px) {
@@ -493,7 +494,18 @@ footer {
   margin-top: 6px;
 }
 
-/* flash メッセージ*/
+/* flash メッセージ */
 .alert {
   margin-bottom: 0;
 }
+
+/* アカウント編集・削除ページ */
+.account-delete {
+  margin: 50px 0 0;
+}
+
+.account-delete p {
+  line-height: 1;
+}
+
+
