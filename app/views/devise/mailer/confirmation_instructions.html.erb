@@ -1,5 +1,10 @@
-<p>Welcome <%= @email %>!</p>
+<p><%= @email %>様</p>
+<p>断捨離できるくんをご利用いただきありがとうございます。</p>
+<p>下記のリンクをクリックすることで、会員登録が完了します。</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p><%= link_to 'メールアドレス認証する', confirmation_url(@resource, confirmation_token: @token) %></p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<small>
+  ※当メールは送信専用メールアドレスから配信されています。このままご返信いただいてもお答えできませんのでご了承ください。<br>
+  ※当メールに心当たりの無い場合は、誠に恐れ入りますが、破棄していただきますようお願いいたします。
+</small>

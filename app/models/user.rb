@@ -2,7 +2,7 @@ class User < ApplicationRecord
   validates :user_name, presence: true, length: { maximum: 50 }
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable,
+         :recoverable, :rememberable, :validatable, :confirmable,
          :omniauthable, omniauth_providers: [:line, :facebook]
 
   def self.from_omniauth(auth)
@@ -19,7 +19,6 @@ class User < ApplicationRecord
   end
 
   def update_without_current_password(params, *options)
-
     if params[:password].blank? && params[:password_confirmation].blank?
       params.delete(:password)
       params.delete(:password_confirmation)
