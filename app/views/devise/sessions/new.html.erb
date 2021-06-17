@@ -18,7 +18,7 @@
           <div class="field form-group">
             <div class="password-text">
               <%= f.label :password, "パスワード" %>
-              <%= link_to "パスワードを忘れた場合" , "#", class: "link-blu" %><br/>
+              <%= link_to "パスワードを忘れた場合" , new_user_password_path, class: "link-blu" %><br/>
             </div>
             <%= f.password_field :password, autocomplete: "off", class: "input-default" %>
           </div>
