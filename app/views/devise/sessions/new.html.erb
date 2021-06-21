@@ -4,8 +4,8 @@
 
     <div class="registration-form">
       <div class="single-content">
-        <%= link_to "LINEでログインする", user_line_omniauth_authorize_path, method: :post, class:   "btn-default btn-line" %>
-        <%= link_to "Facebookログインする", user_facebook_omniauth_authorize_path, method: :post, class: "btn-default btn-facebook" %>
+        <%= link_to "LINEでログインする", user_line_omniauth_authorize_path, method: :post, class: "btn-default btn-line" %>
+        <%= link_to "Facebookでログインする", user_facebook_omniauth_authorize_path, method: :post, class: "btn-default btn-facebook" %>
 
         <%= form_with(model: resource, scope: resource_name, url: session_path(resource_name), class: "email-form") do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
