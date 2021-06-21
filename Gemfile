@@ -22,6 +22,18 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'rails-i18n', '~> 6.0.0'
 
+# ログイン機能
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-line'
+gem 'omniauth-facebook'
+
+# gem "OmniAuth" の脆弱性対策 (OmniAuth::AuthenticityErrorの対策)
+gem 'omniauth-rails_csrf_protection'
+
+# 環境変数
+gem 'dotenv-rails'
+
 # Sprockets4.0だと、app/assetsディレクトリを削除するとSprockets::Railtie::ManifestNeededErrorが発生する
 gem 'sprockets', '~> 3.7.2'
 

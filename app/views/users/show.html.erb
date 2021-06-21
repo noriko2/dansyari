@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="registration-container">
+    <h2 class="registration-head">マイページ</h2>
+
+    <div class="registration-form">
+      <div class="single-content">
+        <p><%= @user.user_name %></p>
+        <%= link_to "アカウント情報の編集",  edit_user_registration_path, class: "btn-default btn-gray" %>
+      </div>
+    </div>
+  </div>
+</div>

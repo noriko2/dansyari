@@ -32,6 +32,9 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+  # rspecでdeviseのメソッドを使えるように設定
+  config.include Devise::Test::IntegrationHelpers, type: :request
+
   # Factory_botの設定 (テスト中に、FactoryBot.create(:user) ではなく、create(:user) と書けるようになる)
   config.include FactoryBot::Syntax::Methods
 

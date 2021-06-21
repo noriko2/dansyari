@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="registration-container">
+    <h2 class="registration-head">新規アカウント登録</h2>
+
+    <div class="registration-form">
+      <div class="single-content">
+        <small>登録することで、<%= link_to "利用規約", privacy_path, class: "link-blu" %>に同意したものとみなされます。</small>
+        <%= link_to "LINEで登録する", user_line_omniauth_authorize_path, method: :post, class:   "btn-default btn-line" %>
+        <%= link_to "Facebookで登録する", user_facebook_omniauth_authorize_path, method: :post, class: "btn-default btn-facebook" %>
+      
+        <%= form_with(model: resource, scope: resource_name, url: registration_path(resource_name), class: "email-form") do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="field form-group">
+            <%= f.label :user_name, "ユーザー名" %><span class="form-require">必須</span><br  >
+            <%= f.text_field :user_name, autofocus: true, autocomplete: "user_name",       placeholder: "例) 断捨離タロウ", class: "input-default" %>
+          </div>
+          
+          <div class="field form-group">
+            <%= f.label :email, "メールアドレス" %><span class="form-require">必須</span><br />
+            <%= f.email_field :email, autocomplete: "email", placeholder: "PC・携帯どちらでも可",   class: "input-default" %>
+          </div>
+        
+          <div class="field form-group">
+            <%= f.label :password, "パスワード" %>
+            <span class="form-require">必須</span><br/>
+            <%= f.password_field :password, autocomplete: "new-password", placeholder: "6文字以上の半角英数字", class: "input-default" %>
+          </div>
+        
+          <div class="field form-group">
+            <%= f.label :password_confirmation, "パスワード (確認用)" %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password",  class: "input-default" %>
+          </div>
+        
+          <div class="actions form-group">
+            <%= f.submit "この内容で登録する", class: "btn-default btn-gray" %>
+          </div>
+  
+          <%= link_to "ログインはこちら", new_session_path(resource_name), class: "link-login" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

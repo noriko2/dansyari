@@ -61,8 +61,22 @@ Rails.application.configure do
   # Use a real queuing backend for Active Job (and separate queues per environment).
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "dansyari_production"
+  config.action_mailer.raise_delivery_errors = false
 
   config.action_mailer.perform_caching = false
+
+  # メール認証
+  config.action_mailer.default_url_options = { host: 'https://dansyari-dekirukun.herokuapp.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => 'smtp.gmail.com',
+    :port => 587,
+    :domain => 'smtp.gmail.com',
+    :user_name => ENV['GMAIL'],
+    :password => ENV['GMAIL_PASSWORD'],
+    :authentication => :plain,
+    :enable_starttls_auto => true
+  }
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.

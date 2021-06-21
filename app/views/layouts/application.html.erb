@@ -6,6 +6,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,16 +14,32 @@
   <body>
     <header>
       <div class="container">
-        <div class="row">
-          <div class="col-sm-3">
+        <div class="header-items">
+          <div class="site-logo">
             <%= link_to image_pack_tag("logo.png", alt:"断捨離できるくん", id:"rogo-img"), root_url %>
+          </div>
+          <div class="nav-bar">
+            <% if user_signed_in? %>
+              <%= link_to user_path(current_user), class: "nav-item" do %>
+                <i class="fas fa-user"></i>
+              <% end %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-item" %>
+            <% else %>
+              <%= link_to "新規登録", new_user_registration_path, class: "nav-item" %>
+              <%= link_to "ログイン", user_session_path, class: "nav-item" %>
+            <% end %>
           </div>
         </div>
       </div>
     </header>
 
     <hr>
-    <%= yield %>
+
+    <%= render 'pages/flash' %>
+
+    <main>
+      <%= yield %>
+    </main>
     <hr class="hr-footer">
 
     <footer>
