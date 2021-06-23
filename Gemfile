@@ -34,6 +34,13 @@ gem 'omniauth-rails_csrf_protection'
 # 環境変数
 gem 'dotenv-rails'
 
+# ファイルのアップロード
+gem 'carrierwave'
+
+# 画像処理
+gem 'image_processing'
+gem 'mini_magick'
+
 # Sprockets4.0だと、app/assetsディレクトリを削除するとSprockets::Railtie::ManifestNeededErrorが発生する
 gem 'sprockets', '~> 3.7.2'
 
