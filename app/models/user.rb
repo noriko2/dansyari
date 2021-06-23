@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :posts, dependent: :destroy
+  
   validates :user_name, presence: true, length: { maximum: 50 }
 
   devise :database_authenticatable, :registerable,
