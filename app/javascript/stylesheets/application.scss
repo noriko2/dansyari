@@ -648,7 +648,13 @@ footer {
   display: flex;
   justify-content: space-between;
   margin-top: 5px;
+}
+.modal-item1 p {
   color: #858f98;
+}
+
+.post-delete:hover {
+  text-decoration: underline;
 }
 
 .close {
