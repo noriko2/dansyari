@@ -499,6 +499,17 @@ footer {
   margin-bottom: 0;
 }
 
+/* マイページ */
+.mypage-item {
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mypage-item-number {
+  margin-bottom: 40px;
+}
+
 /* アカウント編集・削除ページ */
 .account-delete {
   margin: 50px 0 0;
@@ -508,4 +519,156 @@ footer {
   line-height: 1;
 }
 
+/* 断捨離したもの登録ページ */
+.btn-post {
+  font-size: 1.3em;
+}
 
+.post-memo {
+  width: 100%;
+}
+
+/* 断捨離記録ページ */
+.image-container {
+  background-color: #FAFAFA;
+}
+
+.image-form {
+  border-top: 1px solid #d0d0d0;
+  padding: 30px 0px 40px;
+}
+
+.image-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 3px;
+}
+
+.image-item {
+  width: 97px;
+  height: 97px;
+  position: relative;
+  background-color: #fff;
+  margin-right: 2px;
+}
+
+.image-item:last-child {
+  margin-right: 0px;
+}
+
+.image-post {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media screen and (min-width: 350px) {
+  .image-item {
+    width: 115px;
+    height: 115px;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .image-item {
+    width: 132px;
+    height: 132px;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .image-group {
+    margin-bottom: 28px;
+  }
+  .image-item {
+    width: 214px;
+    height: 214px;
+    position: relative;
+    margin-right: 28px;
+  }
+}
+
+/* 断捨離記録ページ(モーダル) */
+.modal-post-open {
+  cursor: pointer;
+}
+
+.modal-post {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px 0;
+  width: 320px;
+  border-radius: 5px;
+  z-index: 2;
+  max-height: 90vh;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-post.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mask.active {
+  opacity: 0.6;
+  visibility: visible;
+}
+
+.modal-image {
+  width: 320px;
+  height: auto;
+}
+
+.modal-items {
+  padding: 0 16px;
+}
+
+.modal-item1 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+  color: #858f98;
+}
+
+.close {
+  color: #fff;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  font-size: 2.5em;
+  margin: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-post {
+    width: 500px;
+    padding: 25px;
+  }
+  .modal-image {
+    width: 450px;
+    height: auto;
+  }
+}

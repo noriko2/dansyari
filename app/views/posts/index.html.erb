@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="registration-container image-container">
+    <h2 class="registration-head">断捨離したもの記録</h2>
+
+    <div class="image-form">
+      <div class="image-column">
+        <% @posts.each_slice(3) do |post1, post2, post3| %>
+
+          <div class="image-group">
+            <div class="image-item">
+              <!-- モーダル (クリックすると、app/views/posts/show.js.erbへいき、app/views/posts/_show.html.erbが表示される) -->
+            　<%= link_to post_path(post1), remote: true, id: "modal-post-open", locals: { post: post1 } do %>
+                <%= image_tag post1.photo.image.url(:medium), class: "image-post" %>
+              <% end %>
+            </div>
+
+            <% if post2 %>
+              <div class="image-item">
+                <%= link_to post_path(post2), remote: true, id: "modal-post-open", locals: { post: post2 } do %>
+                  <%= image_tag post2.photo.image.url(:medium), class: "image-post" %>
+                <% end %>
+              </div>
+            <% end %>
+            
+            <% if post3 %>
+              <div class="image-item">
+                <%= link_to post_path(post3), remote: true, id: "modal-post-open", locals: { post: post2 } do %>
+                  <%= image_tag post3.photo.image.url(:medium), class: "image-post" %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+  </div>　　　　
+</div>
+
+<!-- モーダル -->
+<div id="modal-post" class="modal-post"></div>
+<div id="mask" class="mask"><i class="fas fa-times close"></i></div>
+

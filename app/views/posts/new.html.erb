@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="registration-container">
+    <h2 class="registration-head">断捨離を記録する</h2>
+
+    <div class="registration-form">
+      <div class="single-content">
+        <%= form_with model: @post do |f| %>
+          <div class="field form-group">
+            <%= f.fields_for :photo do |i| %>
+              <p>断捨離したアイテム画像を選択してください<br>
+              <small>( ※１アイテム１画像でお願いします )</small></p>
+              <%= i.file_field :image %>
+            <% end %>
+          </div>
+          <div class="field form-group">
+            <%= f.text_area :caption, placeholder: "メモを残す...", class: "post-memo" %>
+          </div>
+          <div class="field form-group">
+            <%= f.submit "記録する", class: "btn-default btn-blu btn-post" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
