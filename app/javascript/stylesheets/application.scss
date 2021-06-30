@@ -678,3 +678,32 @@ footer {
     height: auto;
   }
 }
+
+/*ページネーションのデザイン*/
+.pagination {
+  justify-content: space-between;
+}
+
+.pagination-item {
+  display: flex;
+}
+
+.pagination>.pagination-item>li>a {          
+  color: #868686;
+}
+
+.pagination>li>a:hover {          
+  color: #868686;
+}
+
+.page-item.active .page-link {
+  background-color: #089fb6;
+  border-color: #089fb6;
+  border-radius: 5px;
+  z-index: 0;
+}
+
+.pagination-item-offset {
+  width: 73px;
+  height: 38px;
+}

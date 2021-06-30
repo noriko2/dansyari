@@ -41,6 +41,9 @@ gem 'carrierwave'
 gem 'image_processing'
 gem 'mini_magick'
 
+# ページネーション
+gem'kaminari'
+
 # Sprockets4.0だと、app/assetsディレクトリを削除するとSprockets::Railtie::ManifestNeededErrorが発生する
 gem 'sprockets', '~> 3.7.2'
 
