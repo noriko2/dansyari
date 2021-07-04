@@ -3,7 +3,18 @@
     <h2 class="registration-head">断捨離したもの記録</h2>
 
     <div class="image-form">
-      <div class="image-column">
+      <% if @posts.blank? %>
+        <div class="top-visual-inner">
+          <div class="post-nothing-1">
+            <%= image_pack_tag("robot.png", alt:"断捨離できるくん", id:"robot-img") %>
+          </div>
+          <div class="post-nothing-2">
+            <p>断捨離記録は、まだないよ</p>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="image-column">        
         <% @posts.each_slice(3) do |post1, post2, post3| %>
 
           <div class="image-group">
