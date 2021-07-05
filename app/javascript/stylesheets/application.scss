@@ -560,6 +560,18 @@ footer {
   font-size: 13px;
 }
 
+.btn-dark-blu {
+  background-color: #048FB8;
+  color: #fff;
+  transition: all 0.2s ease;
+  font-size: 1.1em;
+}
+
+.btn-dark-blu:hover {
+  background-color: #21a5ce;
+  color: #fff;
+}
+
 .account-delete {
   margin: 50px 0 0;
 }
