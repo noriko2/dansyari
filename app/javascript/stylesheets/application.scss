@@ -471,11 +471,11 @@ footer {
   .registration-container {
     width: 700px;
     margin: 0 auto;
+    margin-top: 30px;
   }
   .registration-head {
     font-size: 25px;
     padding: 32px;
-    margin-top: 30px;
   }
 }
 
@@ -505,6 +505,21 @@ footer {
 }
 
 /* マイページ */
+.profile-container {
+  padding-top: 40px;
+}
+
+.profile-image {
+  width: 77px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.profile-name {
+  padding: 20px 0;
+}
+
 .mypage-item {
   font-size: 1.2em;
   text-align: center;
@@ -515,13 +530,61 @@ footer {
   margin-bottom: 40px;
 }
 
+@media screen and (min-width: 768px) {
+  .profile-image {
+    width: 120px;
+  }
+}
+
 /* アカウント編集・削除ページ */
+.edit-user {
+  margin-top: 0;
+}
+
+.edit-profile-image__1 {
+  width: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+.edit-profile-image-contents {
+  margin-top: 20px;
+}
+
+.edit-profile-image-contents p {
+  margin-bottom: 5px;
+}
+
+.edit-profile-image-contents #user_profile_image {
+  font-size: 13px;
+}
+
 .account-delete {
   margin: 50px 0 0;
 }
 
 .account-delete p {
   line-height: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .edit-profile-image {
+    display: flex;
+  }
+  .edit-profile-image__1 {
+    margin: 0;
+  }
+  .edit-profile-image-contents {
+    margin-left: 20px;
+    margin-top: 0;
+    position: relative
+  }
+  .edit-profile-image-contents__inner {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
 }
 
 /* 断捨離したもの登録ページ */
@@ -536,8 +599,11 @@ footer {
 /* 断捨離記録ページ */
 .image-container {
   background-color: #FAFAFA;
+  margin-top: 20px;
 }
-
+.image-head {
+  padding: 10px 0 20px;
+}
 .image-form {
   border-top: 1px solid #d0d0d0;
   padding: 30px 0px 40px;

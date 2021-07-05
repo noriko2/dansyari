@@ -1,5 +1,5 @@
 sample_user = User.create!(user_name: "Dansyari Dekiru",
-  email: "danysari@example.com",
+  email: "dansyari@example.com",
   password:              "dansyari",
   password_confirmation: "dansyari",
   # メール認証をスキップ (deviseのconfimableを確認済にする)

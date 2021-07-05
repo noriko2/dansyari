@@ -21,6 +21,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.where(user_id: current_user).page(params[:page]).order('created_at DESC').per(12)
+    @user = current_user
   end
 
   def show

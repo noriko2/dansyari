@@ -16,7 +16,7 @@ class User < ApplicationRecord
         email: auth.info.email,
         user_name: auth.info.name,
         password: Devise.friendly_token[0, 20],
-        profile_image: auth.info.image
+        remote_profile_image_url: auth.info.image
       )
       # メール認証をスキップ
       user.skip_confirmation!
@@ -36,4 +36,6 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
+
+  mount_uploader :profile_image, ProfileImageUploader
 end

@@ -1,6 +1,13 @@
 <div class="container">
   <div class="registration-container image-container">
-    <h2 class="registration-head">断捨離したもの記録</h2>
+    <div class="user_profile_image">
+      <% if @user.profile_image? %>
+        <%= image_tag( @user.profile_image.url, class: "profile-image") %>
+      <% else %>
+        <%= image_pack_tag( @user.profile_image.url, class: "profile-image") %>
+      <% end %>
+    </div>
+    <h2 class="registration-head image-head">断捨離したもの記録</h2>
 
     <div class="image-form">
       <% if @posts.blank? %>

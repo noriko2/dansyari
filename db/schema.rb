@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 2021_06_23_054723) do
     t.string "uid", default: "", null: false
     t.string "provider", default: "", null: false
     t.string "user_name", null: false
-    t.string "profile_image", default: "", null: false
+    t.string "profile_image"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["user_name"], name: "index_users_on_user_name", unique: true
