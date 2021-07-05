@@ -64,7 +64,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # アカウント情報 更新後のリダイレクト先
-    def after_update_path_for(resource)
-      user_path(resource)
-    end
+  def after_update_path_for(resource)
+    user_path(resource)
+  end
 end

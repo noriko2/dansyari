@@ -41,14 +41,16 @@ class PostsController < ApplicationController
   end
 
   private
-    def post_params
-      params.require(:post).permit(:caption, photo_attributes: [:image]).merge(user_id: current_user.id)
-    end
 
-    def set_post
-      @post = Post.find(params[:id].to_i)
-      if @post.user != current_user
-        redirect_to root_url
-      end
+  def post_params
+    params.require(:post).permit(:caption, photo_attributes: [:image]).
+      merge(user_id: current_user.id)
+  end
+
+  def set_post
+    @post = Post.find(params[:id].to_i)
+    if @post.user != current_user
+      redirect_to root_url
     end
+  end
 end
