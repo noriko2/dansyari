@@ -28,14 +28,14 @@
             <div class="image-item">
               <!-- モーダル (クリックすると、app/views/posts/show.js.erbへいき、app/views/posts/_show.html.erbが表示される) -->
             　<%= link_to post_path(post1), remote: true, id: "modal-post-open", locals: { post: post1 } do %>
-                <%= image_tag post1.photo.image.url(:medium), class: "image-post" %>
+                <%= image_tag post1.photo.image.url, class: "image-post" %>
               <% end %>
             </div>
 
             <% if post2 %>
               <div class="image-item">
                 <%= link_to post_path(post2), remote: true, id: "modal-post-open", locals: { post: post2 } do %>
-                  <%= image_tag post2.photo.image.url(:medium), class: "image-post" %>
+                  <%= image_tag post2.photo.image.url, class: "image-post" %>
                 <% end %>
               </div>
             <% end %>
@@ -43,7 +43,7 @@
             <% if post3 %>
               <div class="image-item">
                 <%= link_to post_path(post3), remote: true, id: "modal-post-open", locals: { post: post2 } do %>
-                  <%= image_tag post3.photo.image.url(:medium), class: "image-post" %>
+                  <%= image_tag post3.photo.image.url, class: "image-post" %>
                 <% end %>
               </div>
             <% end %>

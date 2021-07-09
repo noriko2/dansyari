@@ -58,9 +58,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # コード修正
   gem 'rubocop-airbnb'
-  # test
-  gem "rspec-rails"
-  gem "factory_bot_rails"
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
 end
@@ -78,10 +75,15 @@ group :development do
 end
 
 group :test do
+  # test
+  gem "rspec-rails"
+  gem "factory_bot_rails"
   # Adds support for Capybara system testing
   gem 'capybara'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  # A browser automation framework and ecosystem
+  gem 'selenium-webdriver'
 end
 
 group :production do

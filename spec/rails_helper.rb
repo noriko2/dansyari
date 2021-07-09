@@ -21,7 +21,8 @@ require 'capybara/rspec'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-# Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+# spec/support/配下のファイルを読み込む設定
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
@@ -32,9 +33,20 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 RSpec.configure do |config|
+  config.before(:each, type: :system) do
+    # Spec実行時、ブラウザが自動で立ち上がり挙動を確認できる
+    # driven_by(:selenium_chrome)
+
+    # Spec実行時、ブラウザOFF
+    driven_by(:selenium_chrome_headless)
+  end
+
   # rspecでdeviseのメソッドを使えるように設定
   config.include Devise::Test::IntegrationHelpers, type: :request
 
+  # モジュールの読み込み(spec/support/spec_support.rb)
+  config.include SpecSupport
+  
   # Factory_botの設定 (テスト中に、FactoryBot.create(:user) ではなく、create(:user) と書けるようになる)
   config.include FactoryBot::Syntax::Methods
 
