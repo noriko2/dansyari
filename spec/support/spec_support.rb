@@ -7,4 +7,3 @@ module SpecSupport
     click_button "ログイン"
   end
 end
-

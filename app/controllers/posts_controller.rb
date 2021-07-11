@@ -9,13 +9,13 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    if @post.photo.present?
+    if @post.photo.present? && @post.valid?
       @post.save
       redirect_to posts_path
       flash[:notice] = "投稿が保存されました"
     else
       redirect_to new_post_path
-      flash[:alert] = "投稿に失敗しました"
+      post_error_message(@post)
     end
   end
 
@@ -51,6 +51,18 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id].to_i)
     if @post.user != current_user
       redirect_to root_url
+    end
+  end
+
+  def post_error_message(post)
+    if post.photo.blank? && post.invalid?
+      flash[:alert] = "投稿に失敗しました。 ※ 画像を選択してください。メモは300文字以内で入力してください。"
+    elsif post.photo.blank?
+      flash[:alert] = "投稿に失敗しました。画像を選択してください。"
+    elsif post.invalid?
+      flash[:alert] = "投稿に失敗しました。メモは300文字以内で入力してください。"
+    else
+      flash[:alert] = "投稿に失敗しました。"
     end
   end
 end

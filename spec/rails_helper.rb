@@ -46,7 +46,7 @@ RSpec.configure do |config|
 
   # モジュールの読み込み(spec/support/spec_support.rb)
   config.include SpecSupport
-  
+
   # Factory_botの設定 (テスト中に、FactoryBot.create(:user) ではなく、create(:user) と書けるようになる)
   config.include FactoryBot::Syntax::Methods
 
