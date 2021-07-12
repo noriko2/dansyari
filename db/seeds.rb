@@ -7,8 +7,9 @@ sample_user = User.create!(user_name: "Dansyari Dekiru",
 )
 
 100.times do |n|
-  post = sample_user.posts.create!(
+  post = sample_user.posts.build(
     caption: "【 サンプル記録__#{n + 1} 】 ナイキスニーカー。靴の中に穴があいていたため断捨離。"
   )
-  post.create_photo( image: File.open("./app/javascript/images/shoes.jpeg") )
+  post.build_photo( image: File.open("./app/javascript/images/shoes.jpeg") )
+  post.save
 end
