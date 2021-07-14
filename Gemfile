@@ -44,6 +44,9 @@ gem 'mini_magick'
 # ページネーション
 gem 'kaminari'
 
+# 本番環境でAWSのs3(クラウドストレージ)を使えるようにする
+gem 'fog-aws'
+
 # Sprockets4.0だと、app/assetsディレクトリを削除するとSprockets::Railtie::ManifestNeededErrorが発生する
 gem 'sprockets', '~> 3.7.2'
 
