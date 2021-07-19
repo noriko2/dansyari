@@ -10,13 +10,14 @@ class User < ApplicationRecord
   def self.from_omniauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
     unless user
+      debugger
       user = User.new(
         uid: auth.uid,
         provider: auth.provider,
         email: auth.info.email,
         user_name: auth.info.name,
         password: Devise.friendly_token[0, 20],
-        remote_profile_image_url: auth.info.image
+        remote_profile_image_url: auth.info.image.gsub('http://','https://')
       )
       # メール認証をスキップ
       user.skip_confirmation!
