@@ -1,0 +1,16 @@
+<!-- Modal -->
+<%= image_tag post.photo.image.url, class: "modal-image" %>
+
+<div class="modal-items">
+  <div class="modal-item1">
+    <p><%= post.created_at.strftime('%Y年 %m月 %d日') %></p>
+    <%= link_to post_path(post), method: :delete, data: {confirm: "この記録を削除しますか？"} do %>
+      <p class="post-delete">削除</p>
+    <% end %>
+  </div>
+  <div class="modal-item2">
+    <p><%= post.caption %></p>
+  </div>
+</div>
+
+

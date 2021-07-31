@@ -4,8 +4,24 @@
 
     <div class="registration-form">
       <div class="single-content">
-        <%= form_with(model: resource, scope: resource_name, url: registration_path(resource_name), html: { method: :put }, class: "email-form") do |f| %>
+        <%= form_with(model: resource, scope: resource_name, url: registration_path(resource_name), html: { method: :put }, class: "email-form edit-user") do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
+
+          <div class="field form-group">
+            <div class="edit-profile-image">
+              <% if @user.profile_image? %>
+                <%= image_tag @user.profile_image.url, class: "edit-profile-image__1" %>
+              <% else %>
+                <%= image_pack_tag @user.profile_image.url, class: "edit-profile-image__1" %>
+              <% end %>
+              <div class="edit-profile-image-contents">
+                <div class="edit-profile-image-contents__inner">
+                  <p>プロフィール画像の変更</p>
+                  <%= f.file_field :profile_image, autocomplete: "profile_image" %>
+                </div>
+              </div>
+            </div>
+          </div>
           
           <div class="field form-group">
             <%= f.label :user_name, "ユーザー名" %><br>
@@ -22,7 +38,7 @@
           <% end %>
         
           <div class="actions form-group">
-            <%= f.submit "アカウント情報を更新する", class: "btn-default btn-gray" %>
+            <%= f.submit "アカウント情報を更新する", class: "btn-default btn-dark-blu" %>
           </div>
         <% end %>
   

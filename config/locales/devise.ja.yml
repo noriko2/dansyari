@@ -142,3 +142,21 @@ ja:
       not_saved:
         one: アカウントの作成に失敗しました。
         other: アカウントの作成に失敗しました。
+      carrierwave_processing_error: 処理に失敗しました
+      carrierwave_integrity_error: 許可されたファイルタイプではありません
+      carrierwave_download_error: ダウンロードできませんでした
+      extension_allowlist_error: "%{extension}ファイルのアップロードは許可されていません。許可されたタイプ：%{allowed_types} "
+      extension_denylist_error: "%{extension}ファイルのアップロードは許可されていません。禁止されているタイプ：%{prohibited_types} "
+      content_type_allowlist_error: "%{content_type}ファイルのアップロードは許可されていません。許可されているタイプ：%{allowed_types} "
+      content_type_denylist_error: "%{content_type}ファイルのアップロードは許可されていません"
+      processing_error: "操作に失敗しました。画像ではない可能性があります。"
+      min_size_error: "ファイルサイズは、%{min_size}より大きくしてください"
+      max_size_error: "ファイルサイズは、%{max_size}より小さくしてください"
+  views:
+    pagination:
+      first: <i class="fas fa-angle-double-left"></i>
+      last: <i class="fas fa-angle-double-right"></i>
+      previous: <i class="fas fa-angle-left"></i>
+      next: <i class="fas fa-angle-right"></i>
+      truncate: "..."
+

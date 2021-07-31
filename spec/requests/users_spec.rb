@@ -11,12 +11,16 @@ RSpec.describe "Users", type: :request do
     end
 
     context 'ユーザーがログインしている場合' do
-      it 'プロフィールページが表示される' do
+      it 'マイページが表示される' do
         expect(response).to have_http_status(200)
       end
 
       it 'ログインユーザーの名前が表示される' do
         expect(response.body).to include "#{user_1.user_name}"
+      end
+
+      it '他のユーザーの名前は、表示されない' do
+        expect(response.body).not_to include "#{user_2.user_name}"
       end
 
       it '他のユーザーのプロフィールページは見れない' do

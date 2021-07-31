@@ -1,0 +1,65 @@
+<div class="container">
+  <div class="registration-container image-container">
+    <div class="user_profile_image">
+      <% if @user.profile_image? %>
+        <%= image_tag( @user.profile_image.url, class: "profile-image") %>
+      <% else %>
+        <%= image_pack_tag( @user.profile_image.url, class: "profile-image") %>
+      <% end %>
+    </div>
+    <h2 class="registration-head image-head">断捨離したもの記録</h2>
+
+    <div class="image-form">
+      <% if @posts.blank? %>
+        <div class="top-visual-inner">
+          <div class="post-nothing-1">
+            <%= image_pack_tag("robot.png", alt:"断捨離できるくん", id:"robot-img") %>
+          </div>
+          <div class="post-nothing-2">
+            <p>断捨離記録は、まだないよ</p>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="image-column">        
+        <% @posts.each_slice(3) do |post1, post2, post3| %>
+
+          <div class="image-group">
+            <div class="image-item">
+              <!-- モーダル (クリックすると、app/views/posts/show.js.erbへいき、app/views/posts/_show.html.erbが表示される) -->
+            　<%= link_to post_path(post1), remote: true, id: "modal-post-open", locals: { post: post1 } do %>
+                <%= image_tag post1.photo.image.url, class: "image-post" %>
+              <% end %>
+            </div>
+
+            <% if post2 %>
+              <div class="image-item">
+                <%= link_to post_path(post2), remote: true, id: "modal-post-open", locals: { post: post2 } do %>
+                  <%= image_tag post2.photo.image.url, class: "image-post" %>
+                <% end %>
+              </div>
+            <% end %>
+            
+            <% if post3 %>
+              <div class="image-item">
+                <%= link_to post_path(post3), remote: true, id: "modal-post-open", locals: { post: post2 } do %>
+                  <%= image_tag post3.photo.image.url, class: "image-post" %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <%= paginate @posts %>
+
+  </div>　　　　
+</div>
+
+<!-- モーダル -->
+<div id="modal-post" class="modal-post"></div>
+<div id="mask" class="mask"><i class="fas fa-times close"></i></div>
+
+
+

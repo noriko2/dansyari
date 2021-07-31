@@ -1,0 +1,13 @@
+var modal = document.getElementById('modal-post');
+var mask = document.getElementById('mask');
+
+modal.innerHTML = '<%= escape_javascript(render partial: 'posts/show', locals: { post: @post }) %>';
+
+modal.classList.add('active');
+mask.classList.add('active');
+
+mask.addEventListener('click', function() {
+  modal.classList.remove('active');
+  mask.classList.remove('active');
+});
+
