@@ -8,10 +8,11 @@ class PostsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @post = Post.new(post_params)
     if @post.photo.present? && @post.valid?
       @post.save
-      redirect_to posts_path
+      redirect_to user_path(@user)
       flash[:notice] = "投稿が保存されました"
     else
       redirect_to new_post_path

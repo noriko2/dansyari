@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
+    @total_posts = @user.posts.count
 
     if current_user == @user
       render 'users/show'
