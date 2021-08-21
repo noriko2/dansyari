@@ -2,7 +2,7 @@
   <div class="registration-container profile-container">
     <div class="user_profile_image">
       <% if @user.profile_image? %>
-        <%= link_to image_tag( @user.profile_image.url, class: "profile-image"), edit_user_registration_path %>
+        <%= link_to image_tag( @user.profile_image.thumb.url, class: "profile-image"), edit_user_registration_path %>
       <% else %>
         <%= link_to image_pack_tag( @user.profile_image.url, class: "profile-image"), edit_user_registration_path %>
       <% end %>
@@ -12,9 +12,10 @@
 
     <div class="registration-form">
       <div class="single-content">
-        <p class="mypage-item mypage-item-number">断捨離数：<%= @user.posts.count %>点</p>
+        <p class="mypage-item mypage-item-number">断捨離数：<%= @total_posts %>点</p>
         <%= link_to "断捨離を記録する", new_post_path, class: "mypage-item btn-default btn-blu" %>
         <%= link_to "断捨離を振り返る", posts_path, class: "mypage-item btn-default btn-blu" %>
+        <%= link_to "断捨離できるくんに相談", root_url, class: "mypage-item btn-default btn-blu" %>
         <%= link_to "アカウント情報の編集", edit_user_registration_path, class: "btn-default btn-gray" %>
       </div>
     </div>
