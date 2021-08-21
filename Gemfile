@@ -34,6 +34,19 @@ gem 'omniauth-rails_csrf_protection'
 # 環境変数
 gem 'dotenv-rails'
 
+# ファイルのアップロード
+gem 'carrierwave'
+
+# 画像処理
+gem 'image_processing'
+gem 'mini_magick'
+
+# ページネーション
+gem 'kaminari'
+
+# 本番環境でAWSのs3(クラウドストレージ)を使えるようにする
+gem 'fog-aws'
+
 # Sprockets4.0だと、app/assetsディレクトリを削除するとSprockets::Railtie::ManifestNeededErrorが発生する
 gem 'sprockets', '~> 3.7.2'
 
@@ -48,9 +61,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # コード修正
   gem 'rubocop-airbnb'
-  # test
-  gem "rspec-rails"
-  gem "factory_bot_rails"
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3', '~> 1.4'
 end
@@ -68,10 +78,15 @@ group :development do
 end
 
 group :test do
+  # test
+  gem "rspec-rails"
+  gem "factory_bot_rails"
   # Adds support for Capybara system testing
   gem 'capybara'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  # A browser automation framework and ecosystem
+  gem 'selenium-webdriver'
 end
 
 group :production do

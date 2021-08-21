@@ -135,14 +135,15 @@ footer {
 }
 
 .top-visual__2 {
-  width: 400px;
+  width: 98%;
   margin-top: 50px;
+  padding: 10px;
 }
 
-@media (max-width: 667px) {
+@media (min-width: 768px) {
   .top-visual__2 {
-    width: 98%;
-    padding: 10px;
+    width: 400px;
+    padding: 0;
   }
 }
 
@@ -151,11 +152,15 @@ footer {
   background-color: #d0eef3;
 }
 
+.top-visual-home h2 {
+  font-size: 1.3em;
+}
+
 .top-visual-home__2 {
   background-color: #fff;
 }
 
-.top-visual-home__2 p {
+.top-visual-home__2 p, .top-visual-home__2 a {
   font-size: 1.5em;
   font-family: 'Kosugi', sans-serif;
 }
@@ -164,17 +169,17 @@ footer {
   padding-top: 50px;
 }
 
-.top-visual-home__2 p:last-child {
+.top-visual-home__2 a {
   margin: 50px auto;
 }
 
 #top-visual-home__img {
-  width: 300px;
+  width: 250px;
   height: auto;
 }
 
 .start-btn {
-  width: 60%;
+  width: 80%;
   height: 50px;
   background-color: #048FB8;
   border-color: #048FB8;
@@ -194,6 +199,7 @@ footer {
 
 .question h2 {
   margin: 50px auto 30px auto;
+  font-size: 22px;
 }
 
 .question__items {
@@ -205,36 +211,33 @@ footer {
 }
 
 .question__item {
-  margin: 10px auto;
+  width: 45%;
   height: 70px;
-  width: 250px;
+  margin: 10px auto;
   line-height: 70px;
   border-radius: 5px;
 }
 
 .question__item p {
-  font-size: 1.3em;
+  font-size: 1.2em;
 }
 
-@media (max-width: 667px) {
+@media (min-width: 768px) {
   #top-visual-home__img {
-    width: 250px;
+    width: 300px;
     height: auto;
   }
   .start-btn {
-    width: 80%;
-  }
-  .top-visual-home h2 {
-    font-size: 1.3em;
-  }
-  .question__item {
-    width: 45%;
-  }
-  .question__item p {
-    font-size: 1.2em;
+    width: 60%;
   }
   .question h2 {
-    font-size: 22px;
+    font-size: 2em;
+  }
+  .question__item {
+    width: 250px;
+  }
+  .question__item p {
+    font-size: 1.3em;
   }
 }
 
@@ -244,8 +247,9 @@ footer {
   width: 700px;
 }
 
-#question p{
-  font-size: 1.5em;
+#question p {
+  font-size: 1.2em;
+  padding: 0 10px;
 }
 
 #question__btn {
@@ -255,29 +259,29 @@ footer {
 }
 
 .yes-btn, .no-btn {
+  width: 130px;
   height: 70px;
-  width: 200px;
   line-height: 70px;
   border-radius: 5px;
   font-size: 1.3em;
 }
 
 .no-btn {
-  margin-left: 30px;
+  margin-left: 15px;
 }
 
-@media (max-width: 667px) {
+@media (min-width: 768px) {
   #question p {
-    font-size: 1.2em;
-    padding: 0 10px;
+    font-size: 1.5em;
   }
   .yes-btn, .no-btn {
-    width: 130px;
+    width: 200px;
   }
   .no-btn {
-    margin-left: 15px;
+    margin-left: 30px;
   }
 }
+
 
 /* resultページ */
 .result {
@@ -292,13 +296,12 @@ footer {
 }
 
 #robot-img {
-  width: 270px;
-  height: 360px;
-  margin-top: 30px;
+  width: 180px;
+  height: auto;
 }
 
 #gomi-img {
-  width: 100px;
+  width: 50px;
   height: auto;
   margin: auto 0 10px 0;
 }
@@ -318,7 +321,7 @@ footer {
 
 .result-2 h1 {
   font-family: 'Kosugi', sans-serif;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 .result-2 p {
@@ -333,22 +336,24 @@ footer {
 
 .result-2 p:last-child {
   margin-top: 30px;
+  font-size: 1.1em;
 }
 
-@media (max-width: 667px) {
+@media (min-width: 768px) {
   #robot-img {
-    width: 180px;
-    height: auto;
+    width: 270px;
+    height: 360px;
+    margin-top: 30px;
   }
   #gomi-img {
-    width: 50px;
+    width: 100px;
     height: auto;
   }
   .result-2 h1 {
-    font-size: 1.5em;
+    font-size: 2em;
   }
   .result-2 p:last-child {
-    font-size: 1.1em;
+    font-size: 1.3em;
   }
 }
 
@@ -373,6 +378,10 @@ footer {
 .single-content {
   max-width: 343px;
   margin: 0 auto;
+}
+
+.information {
+  margin-top: 8px;
 }
 
 .link-blu {
@@ -466,11 +475,11 @@ footer {
   .registration-container {
     width: 700px;
     margin: 0 auto;
+    margin-top: 30px;
   }
   .registration-head {
     font-size: 25px;
     padding: 32px;
-    margin-top: 30px;
   }
 }
 
@@ -499,7 +508,74 @@ footer {
   margin-bottom: 0;
 }
 
+/* マイページ */
+.profile-container {
+  padding-top: 40px;
+}
+
+.profile-image {
+  width: 77px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.profile-name {
+  padding: 20px 0;
+}
+
+.mypage-item {
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.mypage-item-number {
+  margin-bottom: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .profile-image {
+    width: 120px;
+  }
+}
+
 /* アカウント編集・削除ページ */
+.edit-user {
+  margin-top: 0;
+}
+
+.edit-profile-image__1 {
+  width: 100px;
+  border-radius: 50%;
+  margin: 0 auto;
+  display: block;
+}
+
+.edit-profile-image-contents {
+  margin-top: 20px;
+}
+
+.edit-profile-image-contents p {
+  margin-bottom: 5px;
+}
+
+.edit-profile-image-contents #user_profile_image {
+  font-size: 13px;
+}
+
+.btn-dark-blu {
+  background-color: #048FB8;
+  color: #fff;
+  transition: all 0.2s ease;
+  font-size: 1.1em;
+}
+
+.btn-dark-blu:hover {
+  background-color: #21a5ce;
+  color: #fff;
+}
+
 .account-delete {
   margin: 50px 0 0;
 }
@@ -508,4 +584,237 @@ footer {
   line-height: 1;
 }
 
+@media screen and (min-width: 768px) {
+  .edit-profile-image {
+    display: flex;
+  }
+  .edit-profile-image__1 {
+    margin: 0;
+  }
+  .edit-profile-image-contents {
+    margin-left: 20px;
+    margin-top: 0;
+    position: relative
+  }
+  .edit-profile-image-contents__inner {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
 
+/* 断捨離したもの登録ページ */
+.btn-post {
+  font-size: 1.3em;
+}
+
+.post-memo {
+  width: 100%;
+}
+
+/* 断捨離記録ページ */
+.image-container {
+  background-color: #FAFAFA;
+  margin-top: 20px;
+}
+.image-head {
+  padding: 10px 0 20px;
+}
+.image-form {
+  border-top: 1px solid #d0d0d0;
+  padding: 30px 0px 40px;
+}
+
+.post-nothing-2 {
+  width: 285px;
+  background-color: #d0eef3;
+  margin-top: 30px;
+  padding: 50px 0;
+  text-align: center;
+}
+
+.post-nothing-2 p {
+  font-family: Kosugi, sans-serif;
+  font-size: 1.3em;
+  margin-bottom: 0;
+}
+
+.image-group {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 3px;
+}
+
+.image-item {
+  width: 97px;
+  height: 97px;
+  position: relative;
+  background-color: #fff;
+  margin-right: 2px;
+}
+
+.image-item:last-child {
+  margin-right: 0px;
+}
+
+.image-post {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media screen and (min-width: 350px) {
+  .image-item {
+    width: 115px;
+    height: 115px;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .image-item {
+    width: 132px;
+    height: 132px;
+    position: relative;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .post-nothing-2 {
+    width: 400px;
+    height: 360px;
+    margin-left: 30px;
+    padding: 0;
+  }
+  .post-nothing-2 p {
+    font-size: 1.5em;
+    line-height: 360px;
+  }
+  .image-group {
+    margin-bottom: 28px;
+  }
+  .image-item {
+    width: 214px;
+    height: 214px;
+    position: relative;
+    margin-right: 28px;
+  }
+}
+
+/* 断捨離記録ページ(モーダル) */
+.modal-post-open {
+  cursor: pointer;
+}
+
+.modal-post {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px 0;
+  width: 320px;
+  border-radius: 5px;
+  z-index: 2;
+  max-height: 90vh;
+  overflow: auto;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-post.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 1;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.mask.active {
+  opacity: 0.6;
+  visibility: visible;
+}
+
+.modal-image {
+  width: 320px;
+  height: auto;
+}
+
+.modal-items {
+  padding: 0 16px;
+}
+
+.modal-item1 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+.modal-item1 p {
+  color: #858f98;
+}
+
+.post-delete:hover {
+  text-decoration: underline;
+}
+
+.close {
+  color: #fff;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  font-size: 2.5em;
+  margin: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-post {
+    width: 500px;
+    padding: 25px;
+  }
+  .modal-image {
+    width: 450px;
+    height: auto;
+  }
+}
+
+/*ページネーションのデザイン*/
+.pagination {
+  justify-content: space-between;
+}
+
+.pagination-item {
+  display: flex;
+}
+
+.pagination>.pagination-item>li>a {          
+  color: #868686;
+}
+
+.pagination>li>a:hover {          
+  color: #868686;
+}
+
+.page-item.active .page-link {
+  background-color: #089fb6;
+  border-color: #089fb6;
+  border-radius: 5px;
+  z-index: 0;
+}
+
+.pagination-item-offset {
+  width: 73px;
+  height: 38px;
+}
