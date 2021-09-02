@@ -94,6 +94,114 @@ header #rogo-img {
   color: #fff;
 }
 
+/* ハンバーガーメニュー */
+.sp-menu {
+  margin-left: auto;
+}
+
+.fa-bars {
+  color: #fff;
+}
+
+.fa-times {
+  color: #fff;
+}
+
+.sp-menu #open, .sp-menu #close {
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.sp-menu #open.hide, .sp-menu #close.hide {
+  display: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 52px;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #D1EEF3;
+  text-align: center;
+  padding: 0 30px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .6s;
+}
+
+.overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.overlay #close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.overlay ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.overlay li {
+  margin-top: 0;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity .3s, transform .3s;
+  border-bottom: 1px solid #A6BCC1;
+}
+
+.overlay.show li {
+  opacity: 1;
+  transform: none;
+}
+
+.overlay li a {
+  line-height: 66px;
+}
+
+.overlay.show li:nth-child(1) {
+  transition-delay: .1s;
+}
+
+.overlay.show li:nth-child(2) {
+  transition-delay: .2s;
+}
+
+.pc-menu {
+  display: none;
+}
+
+@media (min-width: 600px) {
+  .pc-menu {
+    display: block;
+  }
+
+  .pc-menu ul {
+    list-style-type: none;
+    display: flex;
+  }
+
+  .pc-menu a {
+    display: block;
+  }
+
+  .sp-menu {
+    display: none;
+  }
+
+  .overlay.show {
+    display: none;
+  }
+}
+
+
 footer {
   margin-top: 20px;
 }
@@ -799,11 +907,11 @@ footer {
   display: flex;
 }
 
-.pagination>.pagination-item>li>a {          
+.pagination>.pagination-item>li>a {
   color: #868686;
 }
 
-.pagination>li>a:hover {          
+.pagination>li>a:hover {
   color: #868686;
 }
 

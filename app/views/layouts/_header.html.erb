@@ -1,0 +1,44 @@
+<header>
+      <div class="container">
+        <div class="header-items">
+          <div class="site-logo">
+            <%= link_to image_pack_tag("logo.png", alt:"断捨離できるくん", id:"rogo-img"), root_url %>
+          </div>
+
+          <div class="nav-bar">
+            <% if user_signed_in? %>
+              <div class='pc-menu'>
+                <ul>
+                  <li>
+                    <%= link_to user_path(current_user), class: "nav-item" do %>
+                      <i class="fas fa-user"></i>
+                    <% end %>
+                  </li>
+                  <li>
+                    <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-item" %>
+                  </li>
+                </ul>
+              </div>
+
+              <div class='sp-menu'>
+                <i id="open" class="fas fa-bars nav-item"></i>
+                <i id="close" class="fas fa-times hide nav-item"></i>
+              </div>
+
+              <div class="overlay">
+                <nav>
+                  <ul>
+                    <li><%= link_to "マイページ", user_path(current_user) %></li>
+                    <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+                  </ul>
+                </nav>
+              </div>
+
+            <% else %>
+              <%= link_to "新規登録", new_user_registration_path, class: "nav-item" %>
+              <%= link_to "ログイン", user_session_path, class: "nav-item" %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </header>

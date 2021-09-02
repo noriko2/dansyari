@@ -12,26 +12,7 @@
   </head>
 
   <body>
-    <header>
-      <div class="container">
-        <div class="header-items">
-          <div class="site-logo">
-            <%= link_to image_pack_tag("logo.png", alt:"断捨離できるくん", id:"rogo-img"), root_url %>
-          </div>
-          <div class="nav-bar">
-            <% if user_signed_in? %>
-              <%= link_to user_path(current_user), class: "nav-item" do %>
-                <i class="fas fa-user"></i>
-              <% end %>
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "nav-item" %>
-            <% else %>
-              <%= link_to "新規登録", new_user_registration_path, class: "nav-item" %>
-              <%= link_to "ログイン", user_session_path, class: "nav-item" %>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    </header>
+    <%= render 'layouts/header' %>
 
     <hr>
 
@@ -47,5 +28,31 @@
         <p>&copy; 断捨離できるくん</p>
       </div>
     </footer>
+
+    <% if user_signed_in? %>
+      <script>
+        'use strict';
+
+        {
+          const open = document.getElementById('open');
+          const overlay = document.querySelector('.overlay');
+          const close = document.getElementById('close');
+
+          open.addEventListener('click', () => {
+            overlay.classList.add('show');
+            open.classList.add('hide');
+            close.classList.remove('hide');
+          })
+
+          close.addEventListener('click', () => {
+            overlay.classList.remove('show');
+            open.classList.remove('hide');
+            close.classList.add('hide');
+          });
+
+        }
+      </script>
+    <% end %>
+
   </body>
 </html>
