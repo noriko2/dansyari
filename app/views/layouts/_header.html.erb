@@ -35,8 +35,31 @@
               </div>
 
             <% else %>
-              <%= link_to "新規登録", new_user_registration_path, class: "nav-item" %>
-              <%= link_to "ログイン", user_session_path, class: "nav-item" %>
+              <div class='pc-menu'>
+                <ul>
+                  <li>
+                      <%= link_to "新規登録", new_user_registration_path, class: "nav-item" %>
+                  </li>
+                  <li>
+                      <%= link_to "ログイン", user_session_path, class: "nav-item" %>
+                  </li>
+                </ul>
+              </div>
+
+              <div class='sp-menu'>
+                <i id="open" class="fas fa-bars nav-item"></i>
+                <i id="close" class="fas fa-times hide nav-item"></i>
+              </div>
+
+              <div class="overlay">
+                <nav>
+                  <ul>
+                    <li><%= link_to "新規登録", new_user_registration_path %></li>
+                    <li><%= link_to "ログイン", user_session_path %></li>
+                  </ul>
+                </nav>
+              </div>
+
             <% end %>
           </div>
         </div>
